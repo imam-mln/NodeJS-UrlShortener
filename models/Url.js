@@ -20,7 +20,7 @@ const UrlSchema = new mongoose.Schema({
   },
   created: {
     type: String,
-    default: new Date().toLocaleTimeString('en-US', { timezone: 'Asia/Jakarta' }),
+    default: `${new Date().toLocaleTimeString('en-US', { timezone: 'Asia/Jakarta' })}, ${new Date().toLocaleDateString('en-US', { timezone: 'Asia/Jakarta' })}`,
   },
 });
 
