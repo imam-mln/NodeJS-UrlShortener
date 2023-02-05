@@ -1,0 +1,97 @@
+$itim: 'Itim', cursive;
+$pacifico: 'Pacifico', cursive;
+$rubik: 'Rubik', sans-serif;
+
+// Mini Tablet :v
+@mixin small {
+  @media screen and (min-width: 576px) { @content; }
+}
+// Tablet
+@mixin medium {
+  @media screen and (min-width: 768px) { @content; }
+}
+// Desktop
+@mixin large {
+  @media screen and (min-width: 992px) { @content; }
+}
+
+.container {
+  @include large {
+    max-width: 868px;
+  }
+}
+
+.navbar {
+  padding-top: 55px;
+  .navbar-brand {
+    font-family: $pacifico;
+    font-size: 25px;
+  }
+  .nav-link {
+    font-family: $rubik;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 40px;
+  }
+}
+
+.jumbotron {
+  text-align: center;
+  padding-top: 60px;
+  h1 {
+    font-family: $pacifico;
+    font-size: 50px;
+  }
+  h6 {
+    margin-top: 22px;
+    font-family: $rubik;
+    font-size: 22px;
+    line-height: 25px;
+    font-weight: 600;
+  }
+}
+
+.input-group {
+  font-family: $rubik;
+  input {
+    height: 60px;
+    background-color: #eee;
+    border-radius: 8px 0 0 8px;
+  }
+  button {
+    padding: 0 50px;
+    color: #212529;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 0 8px 8px 0;
+  }
+}
+
+#result {
+  .copy-text {
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+    border-radius: 8px;
+    h5 {
+      display: inline-block;
+      font-family: $rubik;
+      font-weight: 800;
+      font-size: 22px;
+    }
+    button {
+      display: inline-block;
+      margin: 0 20px;
+      i {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.alert {
+  strong {
+    font-family: $rubik;
+  }
+}
