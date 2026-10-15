@@ -4,7 +4,6 @@ import './App.scss'
 import './jumbotron-waves.css'
 
 const App = () => {
-
   const [isCopied, setIsCopied] = useState(false);
   const [isError, setIsError] = useState(false);
   
@@ -31,8 +30,11 @@ const App = () => {
 
     if (await validateUrl(long_url)) {
       const res = await axios.post('http://localhost:5500/api/short', {long_url}, { "content-type": "application/json" })
-      console.log(res.data)
-      shorted.innerHTML = "aromx.my.id/" + res.data.id
+      if (import.meta.env.VITE_DEV) {
+        shorted.innerHTML = `http://localhost:${import.meta.env.VITE_PORT}/${res.data.id}`
+      } else {
+        shorted.innerHTML = res.data.short_url
+      }
       result.classList.remove('d-none')
     } else {
       console.log(await validateUrl(long_url))

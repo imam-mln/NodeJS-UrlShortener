@@ -5,7 +5,7 @@ dotenv.config({ path: 'config/.env' });
 
 const app = express();
 
-connectDB();
+await connectDB();
 
 import indexRouter from './routes/index.js';
 import urlsRouter from './routes/urls.js';

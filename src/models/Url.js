@@ -4,6 +4,7 @@ const UrlSchema = new mongoose.Schema({
   id: {
     type: String,
     required: true,
+    unique: true,
   },
   long_url: {
     type: String,
@@ -18,9 +19,9 @@ const UrlSchema = new mongoose.Schema({
     required: true,
     default: 0,
   },
-  created: {
-    type: String,
-    default: `${new Date().toLocaleTimeString('en-US', { timezone: 'Asia/Jakarta' })}, ${new Date().toLocaleDateString('en-US', { timezone: 'Asia/Jakarta' })}`,
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 

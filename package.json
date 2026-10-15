@@ -1,29 +1,28 @@
 {
-  "name": "nodejs-urlshortener",
-  "version": "1.0.0",
+  "name": "nodejs-url-shortener",
+  "version": "1.1.0",
+  "private": true,
+  "description": "A simple URL shortener built with Node.js, Express, MongoDB and React.",
+  "main": "src/server.js",
   "type": "module",
-  "description": "Simple NodeJS URL Shortener",
-  "main": "server.js",
   "scripts": {
-    "test": "echo test"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "build": "npm --prefix frontend run build",
+    "install:all": "npm install && npm --prefix frontend install",
+    "test": "echo \"No tests yet\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/imammay24/NodeJS-UrlShortener.git"
+  "engines": {
+    "node": ">=20"
   },
-  "keywords": [
-    "url-shortener"
-  ],
-  "author": "imammay24",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/imammay24/NodeJS-UrlShortener/issues"
-  },
-  "homepage": "https://github.com/imammay24/NodeJS-UrlShortener",
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.12.13",
-    "nanoid": "^4.0.0"
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.11.1",
+    "nanoid": "^6.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
   }
 }
